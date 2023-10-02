@@ -46,7 +46,7 @@ Coming soon
 
 ## License
 
-Coming soon
+[GNU GENERAL PUBLIC LICENSE](LICENSE)
 
 ## Author
 
