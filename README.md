@@ -14,14 +14,39 @@ Refactorized copy of IncidentTracker_Dev
 Easy tracking of all security inciednts including suspect behavior like mails, failures e.g.
 
 ## About the project
+Coming soon
 
 ## TechStack
 
+Coming soon
+
 ## Getting started
+
+Coming soon
 
 ## API-Endpoints
 
+  Root | Endpoint | Methode | Secured (optional additional layer) | Purpose | Controller |
+| -------- | -------- | -------- | -------- | -------- |-------- |
+| /api   | /incident/{incidentId}    | GET     |  yes    | informations about specific incident | IncidentController |
+| /api    | /incident/{incidentId}     | DELETE     | yes (admin)     | delets the chosen incident | IncidentController |
+| /api    | /incidents     | GET     | yes  | returns a list of all incidents | IncidentController |
+| /api    | /categories     | GET     | yes  | returns a list of all categories | IncidentController |
+| /api    | /severities     | GET     | yes  | returns a list of all severities | IncidentController |
+| /api    | /incidents/create    | POST     | yes  | creates a new incident (needs user id in RequestBody) | IncidentController |
+| /api    | /newUpdate     | POST     | yes  | creates a new update for the incident (needs incident id in RequestBody) | IncidentUpdatesController |
+| /api    | /allUpdates     | GET     | yes  | returns a list of all updates | IncidentUpdatesController |
+| /api    | /updates/{incidentId}     | GET     | yes  | returns a list of all updates to a specified incident | IncidentUpdatesController |
+| /api    | /user/{userId}}     | GET     | yes (current authorized user) | returns the user informations | UserController |
+| /api    | /users     | GET     | yes (admin)  | returns a list of all users | UserController |
+| /api    | /usersCustomSort     | GET     | yes (admin)  | returns a list of all users in a specific order | UserController |
+| /auth    | /register     | POST     | no  | returns a list of all users in a specific order | AuthenticationController |
+| /auth    | /login   | POST     | no  | returns a list of all users in a specific order | AuthenticationController |
+
+
 ## License
+
+Coming soon
 
 ## Author
 
