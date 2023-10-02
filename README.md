@@ -1,5 +1,15 @@
 # incident-tracker
 Refactorized copy of IncidentTracker_Dev
+## Table of Content
+- [About the project](README.md#about-the-project)
+- [TechStack](README.md#TechStack)
+- [Getting started](README.md#getting-started)
+- [API-Endpoints](README.md#api-endpoints)
+- [License](README.md#license)
+- [Author](README.md#author)
+
+
+
 ## Purpose: 
 Easy tracking of all security inciednts including suspect behavior like mails, failures e.g.
 
