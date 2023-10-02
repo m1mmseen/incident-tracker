@@ -76,4 +76,4 @@ Coming soon
 
 <p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=m1mmseen&show_icons=true&locale=en&layout=compact" alt="m1mmseen" /></p>
 
-<p>Happy created with https://rahuldkjain.github.io/gh-profile-readme-generator/</p>
+<p>Profil happy created with https://rahuldkjain.github.io/gh-profile-readme-generator/</p>
