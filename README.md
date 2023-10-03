@@ -63,12 +63,15 @@ Open your browser or postman to make requests to the API (see [API-Endpoints](RE
 
 
 
-### Build frontend
-COMING SOON
+### Build frontend docker-image
+1. Build frontend
+   `docker build -t incident-tracker-frontend .`
+2. Pull frontend docker-image
+   COMING SOON
 
 ### Run Frontend
-COMING SOON
-
+    `docker run -it --network incident-tracker -p 3000:80 --rm --name incident-tracker-frontend-container incident-tracker-frontend`
+    
 ## API-Endpoints
 
   Root | Endpoint | Methode | Secured (optional additional layer) | Purpose | Controller |
