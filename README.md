@@ -22,7 +22,46 @@ Coming soon
 
 ## Getting started
 
-Coming soon
+### Start the Database in a docker container with a specified network
+1. Pull Image (if needed)
+
+    `docker pull mysql`
+
+2. Create a network for the application
+   
+    `docker network create incident-tracker-network`
+
+3. Run Database in created network
+
+    `docker run --name mysqldb --network incident-tracker-network -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=incident-tracker-db -d mysql`
+
+    _//change port (if needed) with portbinding 3307:3306 whereas 3307 is the host port, if 3306 is allready in use and 3306 is the internal port for the database in the container_
+
+### Build or Pull backend docker-image
+
+1. Build application
+    `docker build -t incident-tracker-backend .`
+   
+2. Pull application
+    COMING SOON
+
+3. Run backend docker-image in a container
+
+    `docker run --network incident-tracker-network --name incident-tracker-backend-container -p 8080:8080 incident-tracker-backend`
+
+    _//change port (if needed) with portbinding 8081:8080 whereas 8081 is the host port, if 8080 is allready in use and 8080 is the internal port for the database in the container_
+
+### Use API
+
+Open your browser or postman to make requests to the API (see [API-Endpoints](README.md#api-endpoints) )
+
+
+
+### Build frontend
+COMING SOON
+
+### Run Frontend
+COMING SOON
 
 ## API-Endpoints
 
