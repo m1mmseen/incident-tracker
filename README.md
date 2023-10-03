@@ -72,7 +72,7 @@ Open your browser or postman to make requests to the API (see [API-Endpoints](RE
 COMING SOON
 
 ### Run Frontend 
-	`docker run -it --network incident-tracker -p 3000:80 --rm --name incident-tracker-frontend-container incident-tracker-frontend`
+   `docker run -it --network incident-tracker -p 3000:80 --rm --name incident-tracker-frontend-container incident-tracker-frontend`
     
 ## API-Endpoints
 
