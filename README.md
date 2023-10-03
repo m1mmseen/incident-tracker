@@ -18,7 +18,13 @@ Coming soon
 
 ## TechStack
 
-Coming soon
+Build Tool: Apache Maven
+Database: MySql
+
+| Backend  | Frontend |
+| -------------| ------------- |
+| Spring Boot Starter Web <br> Spring Boot Data JPA <br> Spring Boot Starter Security <br> Spring Boot Starter OAuth2 Resource Server <br> Json Web Token | Vue <br> Vite <br> Axios <br> Pinia <br> Bootstrap |
+
 
 ## Getting started
 
