@@ -45,13 +45,13 @@ Database: MySql
 
 ### Build or Pull backend docker-image
 
-1. Build application
+1. Build application <br>
     `docker build -t incident-tracker-backend .`
    
-2. Pull application
+2. Pull application <br>
     COMING SOON
 
-3. Run backend docker-image in a container
+3. Run backend docker-image in a container <br>
 
     `docker run --network incident-tracker-network --name incident-tracker-backend-container -p 8080:8080 incident-tracker-backend`
 
@@ -64,13 +64,15 @@ Open your browser or postman to make requests to the API (see [API-Endpoints](RE
 
 
 ### Build frontend docker-image
-1. Build frontend
-   `docker build -t incident-tracker-frontend .`
-2. Pull frontend docker-image
-   COMING SOON
 
-### Run Frontend
-    `docker run -it --network incident-tracker -p 3000:80 --rm --name incident-tracker-frontend-container incident-tracker-frontend`
+1. Build frontend <br>
+	`docker build -t incident-tracker-frontend .`
+
+2. Pull application <br>
+COMING SOON
+
+### Run Frontend 
+	`docker run -it --network incident-tracker -p 3000:80 --rm --name incident-tracker-frontend-container incident-tracker-frontend`
     
 ## API-Endpoints
 
