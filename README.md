@@ -18,7 +18,7 @@ Coming soon
 
 ## TechStack
 
-Build Tool: Apache Maven
+Build Tool: Apache Maven <br>
 Database: MySql
 
 | Backend  | Frontend |
