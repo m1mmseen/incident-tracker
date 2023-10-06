@@ -19,7 +19,19 @@ Refactorized copy of IncidentTracker_Dev
 Easy tracking of all security inciednts including suspect behavior like mails, failures e.g.
 
 ## About the project
-<img alt="Static Badge" src="https://img.shields.io/badge/Status-Coming Soon-orange">
+Using the tracker, incidents can be documented and tracked. The idea is that every user can report an incident, ensuring that as many incidents as possible can be recorded without any obstacles. In this first version, basic features have been implemented. However, the plan is to implement more user stories in the future. The following process is possible in this initial version:
+A user reports an incident, categorizes it, and assigns a level of severity. They also give it a title and a detailed description. After the incident has been reported, so-called updates can be used to add all related measures, as well as additional notes, etc.
+There is a login for registered users, but for now, only an admin should be able to add new users, so the respective endpoint can only be accessed by an admin.
+The dashboard displays all incidents, recent activities, and, in the case of an admin, all active users and failed logins. However, the last two features mentioned do not yet have an API endpoint or JavaScript logic.
+
+Every user can see their own details, change their password, and log out via a user menu in the bottom left corner. All features have been implemented except for the password change. Currently, only an admin is allowed to delete a user.
+There is already a basic implementation for notifications. The idea is to make it possible to quickly share an incident with important other users or departments.
+Also, sending notifications to customers or suppliers as external communication is sensible, but it could also be considered outside the scope of the tracker.
+
+In the frontend, the option to close or, in this case, solve an incident has already been implemented. What's missing is the corresponding logic in the backend and the database.
+
+Future Features after finishing the current Definition of Done:
+Editing an incident afterwards, assigning an incident to another user, create a final report after solving an incident
 
 ## TechStack
 
