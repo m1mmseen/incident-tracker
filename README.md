@@ -19,7 +19,7 @@ Refactorized copy of IncidentTracker_Dev
 Easy tracking of all security inciednts including suspect behavior like mails, failures e.g.
 
 ## About the project
-Coming soon
+<img alt="Static Badge" src="https://img.shields.io/badge/Status-Coming Soon-orange">
 
 ## TechStack
 
@@ -54,7 +54,7 @@ Database: MySql
     `docker build -t incident-tracker-backend .`
    
 2. Pull application <br>
-    COMING SOON
+    <img alt="Static Badge" src="https://img.shields.io/badge/Status-Coming Soon-orange">
 
 3. Run backend docker-image in a container <br>
 
@@ -74,7 +74,7 @@ Open your browser or postman to make requests to the API (see [API-Endpoints](RE
 	`docker build -t incident-tracker-frontend .`
 
 2. Pull application <br>
-COMING SOON
+<img alt="Static Badge" src="https://img.shields.io/badge/Status-Coming Soon-orange">
 
 ### Run Frontend 
    `docker run -it --network incident-tracker -p 3000:80 --rm --name incident-tracker-frontend-container incident-tracker-frontend`
