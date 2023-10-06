@@ -5,49 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7932919b-3a95-40a8-b018-4c9176dd05eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/BackendApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentUpdatesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/SpaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/helloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentUpdatesDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentUpdatesRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/LoginDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/LoginResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/RegisterDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/RegisterResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/SortRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/model/Incident.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/model/IncidentCategorie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/model/IncidentSeverity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/model/IncidentUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/model/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/IncidentCategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/IncidentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/IncidentSeverityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/IncidentUpdatesRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/UserRoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/security/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/services/AuthenticationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/services/TokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/uitl/KeyGenerationUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/uitl/RsaKeyProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/dev/chha/backend/BackendApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -68,7 +27,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -117,6 +76,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="HTTP Request.generated-requests | #1" />
+      <item itemvalue="Spring Boot.BackendApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.generated-requests | #1" />
@@ -153,7 +116,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="SetupBackend" />
                       </list>
                     </value>
                   </entry>
