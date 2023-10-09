@@ -13,8 +13,6 @@ Refactorized copy of IncidentTracker_Dev
 - [License](README.md#license)
 - [Author](README.md#author)
 
-
-
 ## Purpose: 
 Easy tracking of all security inciednts including suspect behavior like mails, failures e.g.
 
