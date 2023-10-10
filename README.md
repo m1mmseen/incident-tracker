@@ -61,8 +61,8 @@ Database: MySql
 ### Build or Pull backend docker-image
 
 1. Build application <br>
-    Go to incident-tracker/backend folder
-    Run:
+    Go to incident-tracker/backend folder <br>
+    Run: <br>
     `docker build -t incident-tracker-backend .`
    
 3. Pull application <br>
@@ -83,8 +83,8 @@ Open your browser or postman to make requests to the API (see [API-Endpoints](RE
 ### Build frontend docker-image
 
 1. Build frontend <br>
-    Go to incident-tracker/frontend folder
-    Run:
+    Go to incident-tracker/frontend folder <br>
+    Run: <br>
 	`docker build -t incident-tracker-frontend .`
 
 2. Pull application <br>
