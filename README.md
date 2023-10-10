@@ -61,12 +61,14 @@ Database: MySql
 ### Build or Pull backend docker-image
 
 1. Build application <br>
+    Go to incident-tracker/backend folder
+    Run:
     `docker build -t incident-tracker-backend .`
    
-2. Pull application <br>
+3. Pull application <br>
     <img alt="Static Badge" src="https://img.shields.io/badge/Status-Coming Soon-orange">
 
-3. Run backend docker-image in a container <br>
+4. Run backend docker-image in a container <br>
 
     `docker run --network incident-tracker-network --name incident-tracker-backend-container -p 8080:8080 incident-tracker-backend`
 
@@ -81,6 +83,8 @@ Open your browser or postman to make requests to the API (see [API-Endpoints](RE
 ### Build frontend docker-image
 
 1. Build frontend <br>
+    Go to incident-tracker/frontend folder
+    Run:
 	`docker build -t incident-tracker-frontend .`
 
 2. Pull application <br>
