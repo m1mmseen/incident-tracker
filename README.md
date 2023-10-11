@@ -99,16 +99,16 @@ Open your browser or postman to make requests to the API (see [API-Endpoints](RE
 | -------- | -------- | -------- | -------- | -------- |-------- |
 | /api/incident   | /{incidentId}    | GET     |  yes    | informations about specific incident | IncidentController |
 | /api/incident    | /{incidentId}     | DELETE     | yes (admin)     | delets the chosen incident | IncidentController |
-| /api/incident    | all     | GET     | yes  | returns a list of all incidents | IncidentController |
+| /api/incident    | /all     | GET     | yes  | returns a list of all incidents | IncidentController |
 | /api/incident    | /categories     | GET     | yes  | returns a list of all categories | IncidentController |
 | /api/incident    | /severities     | GET     | yes  | returns a list of all severities | IncidentController |
-| /api/incident    | /create    | POST     | yes  | creates a new incident (needs user id in RequestBody) | IncidentController |
+| /api/incident    | /report    | POST     | yes  | creates a new incident (needs user id in RequestBody) | IncidentController |
 | /api/updates    | /newUpdate     | POST     | yes  | creates a new update for the incident (needs incident id in RequestBody) | IncidentUpdatesController |
 | /api/updates   | /allUpdates     | GET     | yes  | returns a list of all updates | IncidentUpdatesController |
 | /api/updates    | /{incidentId}     | GET     | yes  | returns a list of all updates to a specified incident | IncidentUpdatesController |
 | /api/user    | /{userId}}     | GET     | yes (current authorized user) | returns the user informations | UserController |
 | /api/user    | /all     | GET     | yes (admin)  | returns a list of all users | UserController |
-| /api/user    | /CustomSort     | GET     | yes (admin)  | returns a list of all users in a specific order | UserController |
+| /api/user    | /customSort     | GET     | yes (admin)  | returns a list of all users in a specific order | UserController |
 | /auth    | /register     | POST     | no  | returns a list of all users in a specific order | AuthenticationController |
 | /auth    | /login   | POST     | no  | returns a list of all users in a specific order | AuthenticationController |
 
