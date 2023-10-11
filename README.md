@@ -91,7 +91,7 @@ Open your browser or postman to make requests to the API (see [API-Endpoints](RE
 <img alt="Static Badge" src="https://img.shields.io/badge/Status-Coming Soon-orange">
 
 ### Run Frontend 
-   `docker run -it --network incident-tracker-network -p 3000:80 --rm --name incident-tracker-frontend-container incident-tracker-frontend`
+   `docker run -it --network incident-tracker-network -p 3000:3000 --rm --name incident-tracker-frontend-container incident-tracker-frontend`
     
 ## API-Endpoints
 
