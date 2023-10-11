@@ -4,7 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7932919b-3a95-40a8-b018-4c9176dd05eb" name="Changes" comment="Edited index.html in frontend" />
+    <list default="true" id="7932919b-3a95-40a8-b018-4c9176dd05eb" name="Changes" comment="Vue and dependencies added, components copied from Incident-Tracker_Dev">
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/incident-tracker.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentUpdatesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentUpdateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentUpdatesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentUpdateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/IncidentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/IncidentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/IncidentSeverityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/IncidentSeverityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/IncidentUpdatesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/repository/IncidentUpdateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/services/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/services/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ActiveUsers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ActiveUsers.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/CreateIncidentForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CreateIncidentForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/IncidentRow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/IncidentRow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/IncidentTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/IncidentTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/StatusNewUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/StatusNewUpdate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/planedFeatures/UserForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserTableDashboardView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserTableDashboardView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/router/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/router/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/User_Overview_Admin_view.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/User_Overview_Admin_view.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +88,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.1.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -71,6 +99,9 @@
       <recent name="C:\Users\chris\IdeaProjects\incident-tracker\backend\src\main\java\dev\chha\backend\repository" />
       <recent name="C:\Users\chris\IdeaProjects\incident-tracker\backend\src\main\java\dev\chha\backend\security" />
       <recent name="C:\Users\chris\IdeaProjects\incident-tracker\backend\src\main\java\dev\chha\backend\services" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chris\IdeaProjects\incident-tracker\frontend\src\components\planedFeatures" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BackendApplication">
@@ -110,6 +141,7 @@
       <workItem from="1696238064153" duration="247000" />
       <workItem from="1696942677123" duration="81000" />
       <workItem from="1696942839310" duration="790000" />
+      <workItem from="1697023490839" duration="2256000" />
     </task>
     <task id="LOCAL-00001" summary="Created Dockerfiles">
       <created>1696599266054</created>
@@ -139,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696946212676</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Vue and dependencies added, components copied from Incident-Tracker_Dev">
+      <created>1696947789918</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696947789918</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +215,7 @@
     <MESSAGE value="Created Dockerfiles" />
     <MESSAGE value="Github Actions maven.yml updated" />
     <MESSAGE value="Controller, Model, Repos, Services, Utils, dtos and security classes copied from Incident-tracker_dev" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controller, Model, Repos, Services, Utils, dtos and security classes copied from Incident-tracker_dev" />
+    <MESSAGE value="Vue and dependencies added, components copied from Incident-Tracker_Dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vue and dependencies added, components copied from Incident-Tracker_Dev" />
   </component>
 </project>

@@ -1,6 +1,6 @@
 <template>
 
-  <div class="container-sm mt-3 border border-light-subtle rounded shadow p-4" :UserId="UserId">
+  <div :UserId="UserId" class="container-sm mt-3 border border-light-subtle rounded shadow p-4">
     <div class="row">
       <h3>
         <span class="badge bg-info-subtle text-dark">{{ User.userId }}</span>

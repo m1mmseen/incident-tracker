@@ -68,7 +68,7 @@ router.beforeEach(async (to) => {
 
 
 
-    if (authRequired && auth.user == '') {
+    if (authRequired && auth.user === '') {
         return 'login';
     }
 })

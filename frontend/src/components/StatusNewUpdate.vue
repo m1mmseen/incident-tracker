@@ -85,7 +85,7 @@ export default {
 
       };
       try {
-        const response = await axios.post('/api/newUpdate', data, config);
+        const response = await axios.post('/api/updates/newUpdate', data, config);
 
         if (response.status === 201) {
           this.formdata.shortDescription = '';

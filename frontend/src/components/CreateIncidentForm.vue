@@ -93,7 +93,7 @@ export default {
     },
     async getCategories() {
       try {
-        await axios.get('/api/categories', config)
+        await axios.get('/api/incident/categories', config)
             .then((response) => {
               if (response.status === 200) {
                 this.categories = response.data;
@@ -105,7 +105,7 @@ export default {
     },
     async getSeverities() {
       try {
-        await axios.get('/api/severities', config)
+        await axios.get('/api/incident/severities', config)
             .then((response) => {
               if (response.status === 200) {
                 this.severities = response.data;
@@ -118,7 +118,7 @@ export default {
 
     async submitForm() {
       console.log(this.formdata);
-      await axios.post('/api/incidents/create', this.formdata, config)
+      await axios.post('/api/incident/report', this.formdata, config)
           .then((response) => {
             const status = response.status;
             if (status === 201) {

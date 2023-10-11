@@ -1,6 +1,6 @@
 package dev.chha.backend.dto;
 
-public class IncidentUpdatesDto {
+public class IncidentUpdateDto {
 
     private String shortDescription;
     private String updateText;
@@ -13,9 +13,9 @@ public class IncidentUpdatesDto {
 
     private long createdAt;
 
-    public IncidentUpdatesDto() {}
+    public IncidentUpdateDto() {}
 
-    public IncidentUpdatesDto(String shortDescription, String updateText, Long incidentId, Long userId, String username, long createdAt) {
+    public IncidentUpdateDto(String shortDescription, String updateText, Long incidentId, Long userId, String username, long createdAt) {
         this.shortDescription = shortDescription;
         this.updateText = updateText;
         this.incidentId = incidentId;

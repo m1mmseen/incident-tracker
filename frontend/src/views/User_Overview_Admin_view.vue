@@ -2,7 +2,6 @@
 
 import PageTitle from "../components/PageTitle.vue";
 import NavigationBar from "../components/NavigationBar.vue";
-import UserCard from "../components/UserCard.vue";
 import UserTable from "../components/UserTable.vue";
 </script>
 

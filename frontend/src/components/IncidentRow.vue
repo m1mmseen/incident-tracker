@@ -61,7 +61,7 @@ export default {
         },
       };
       try {
-        const response = await axios.get('api/incidents', config);
+        const response = await axios.get('api/incident/all', config);
         this.incidents = response.data;
         } catch (error) {
         console.error('Error occurred fetching incidents:', error)

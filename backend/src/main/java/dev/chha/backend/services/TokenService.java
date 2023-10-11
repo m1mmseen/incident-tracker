@@ -1,8 +1,6 @@
 package dev.chha.backend.services;
 
-import dev.chha.incidenttracker.entities.User;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
+import dev.chha.backend.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;

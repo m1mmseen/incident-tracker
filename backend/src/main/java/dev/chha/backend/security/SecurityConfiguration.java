@@ -15,7 +15,6 @@ import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -27,7 +26,6 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.access.expression.WebExpressionAuthorizationManager;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -62,8 +60,8 @@ public class SecurityConfiguration {
                 .cors(Customizer.withDefaults())
                 .csrf(csrf -> csrf.disable()) // only in dev mode
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/auth/**", "/hello").permitAll();
-                    auth.requestMatchers("/admin/**", "/api/users", "/api/usersCustomSort").hasRole("ADMIN");
+                    auth.requestMatchers("/auth/login").permitAll();
+                    auth.requestMatchers("/admin/**", "/api/users", "/api/usersCustomSort", "/auth/register").hasRole("ADMIN");
                     auth.requestMatchers(HttpMethod.DELETE,"/api/incident/**").hasRole("ADMIN");
                     auth.anyRequest().authenticated();})
                 .oauth2ResourceServer(oauth2 -> oauth2
@@ -99,7 +97,7 @@ public class SecurityConfiguration {
         return  jwtConverter;
     }
 
-    @Bean
+/*    @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOrigins(List.of("http://localhost:3000"));
@@ -108,6 +106,6 @@ public class SecurityConfiguration {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
         return source;
-    }
+    }*/
 
 }

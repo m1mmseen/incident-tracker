@@ -1,10 +1,10 @@
 package dev.chha.backend.controller;
 
-import dev.chha.incidenttracker.dtos.SortRequestDTO;
-import dev.chha.incidenttracker.dtos.UserDTO;
-import dev.chha.incidenttracker.entities.User;
-import dev.chha.incidenttracker.repositories.UserRepository;
-import dev.chha.incidenttracker.services.TokenService;
+import dev.chha.backend.dto.SortRequestDto;
+import dev.chha.backend.dto.UserDto;
+import dev.chha.backend.model.User;
+import dev.chha.backend.repository.UserRepository;
+import dev.chha.backend.services.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
@@ -25,7 +25,7 @@ public class UserController {
     @Autowired
     private TokenService tokenService;
 
-    @GetMapping("/user/{userId}")
+    @GetMapping("/{userId}")
     public ResponseEntity<?> getUserDetails(@PathVariable Long userId,
                                          @RequestHeader("Authorization") String authorizationHeader) {
         String token = authorizationHeader.substring("Bearer ".length());
@@ -43,7 +43,7 @@ public class UserController {
         }
         User user = userOpt.get();
 
-        UserDTO dto = new UserDTO();
+        UserDto dto = new UserDto();
         dto.setUsername(user.getUsername());
         dto.setUserId(userId);
         dto.setFirstname(user.getFirstname());
@@ -55,7 +55,7 @@ public class UserController {
 
     }
 
-    @GetMapping("/users")
+    @GetMapping("/all")
     public ResponseEntity<Iterable<User>> getAllUsers() {
 
         Iterable<User> users = userRepo.findAll(Sort.by(Sort.Direction.ASC, "lastname"));
@@ -64,8 +64,8 @@ public class UserController {
 
     }
 
-    @PostMapping("/usersCustomSort")
-    public ResponseEntity<?> getAllUsers(@RequestBody SortRequestDTO sortRequest) {
+    @PostMapping("/customSort")
+    public ResponseEntity<?> getAllUsers(@RequestBody SortRequestDto sortRequest) {
 
         String sort = sortRequest.getSorting();
 

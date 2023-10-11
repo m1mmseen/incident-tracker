@@ -1,13 +1,12 @@
 package dev.chha.backend.controller;
 
-import dev.chha.incidenttracker.dtos.IncidentDTO;
-import dev.chha.incidenttracker.dtos.IncidentUpdateDTO;
-import dev.chha.incidenttracker.entities.Incident;
-import dev.chha.incidenttracker.entities.IncidentUpdates;
-import dev.chha.incidenttracker.entities.User;
-import dev.chha.incidenttracker.repositories.IncidentRepository;
-import dev.chha.incidenttracker.repositories.IncidentUpdatesRepository;
-import dev.chha.incidenttracker.repositories.UserRepository;
+import dev.chha.backend.dto.IncidentUpdateDto;
+import dev.chha.backend.model.Incident;
+import dev.chha.backend.model.IncidentUpdate;
+import dev.chha.backend.model.User;
+import dev.chha.backend.repository.IncidentRepository;
+import dev.chha.backend.repository.IncidentUpdateRepository;
+import dev.chha.backend.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,26 +19,26 @@ import java.util.stream.StreamSupport;
 
 @RestController
 @RequestMapping("/api")
-public class IncidentUpdatesController {
+public class IncidentUpdateController {
 
 
-    private final IncidentUpdatesRepository updateRepo;
+    private final IncidentUpdateRepository updateRepo;
 
     private final IncidentRepository incidentRepo;
 
     private final UserRepository userRepo;
 
-    public IncidentUpdatesController(IncidentUpdatesRepository updateRepo, IncidentRepository incidentRepo, UserRepository userRepo) {
+    public IncidentUpdateController(IncidentUpdateRepository updateRepo, IncidentRepository incidentRepo, UserRepository userRepo) {
         this.updateRepo = updateRepo;
         this.incidentRepo = incidentRepo;
         this.userRepo = userRepo;
     }
 
     @PostMapping("/newUpdate")
-    public ResponseEntity<?> updateIncident(@RequestBody IncidentUpdateDTO incidentUpdateDto) {
+    public ResponseEntity<?> updateIncident(@RequestBody IncidentUpdateDto incidentUpdateDto) {
 
 
-        IncidentUpdates update =  new IncidentUpdates();
+        IncidentUpdate update =  new IncidentUpdate();
 
         Optional<Incident> incident = incidentRepo.findById(incidentUpdateDto.getIncidentId());
         Optional<User> user = userRepo.findByUsername(incidentUpdateDto.getUsername());
@@ -60,15 +59,15 @@ public class IncidentUpdatesController {
         update.setUser(user.get());
 
         updateRepo.save(update);
-        List<IncidentUpdates> updates = updateRepo.findAllByIncident_IdOrderByCreatedAtDesc(update.getIncident().getIncidentId());
+        List<IncidentUpdate> updates = updateRepo.findAllByIncident_IdOrderByCreatedAtDesc(update.getIncident().getIncidentId());
 
         return new ResponseEntity<>(updateList(updates), HttpStatus.CREATED);
 
     }
     @GetMapping("/allUpdates")
-    public ResponseEntity<Iterable<IncidentUpdateDTO>> getAllUpdatesBy() {
+    public ResponseEntity<Iterable<IncidentUpdateDto>> getAllUpdatesBy() {
 
-        Iterable<IncidentUpdates> updates = updateRepo.findAll();
+        Iterable<IncidentUpdate> updates = updateRepo.findAll();
 
         return new ResponseEntity<>(updateList(updates), HttpStatus.OK);
 
@@ -76,12 +75,12 @@ public class IncidentUpdatesController {
     }
     @GetMapping("/updates/{incidentId}")
     public ResponseEntity<?> getAllUpdatesByIncident(@PathVariable Long incidentId) {
-        List<IncidentUpdates> updates = updateRepo.findAllByIncident_IdOrderByCreatedAtDesc(incidentId);
+        List<IncidentUpdate> updates = updateRepo.findAllByIncident_IdOrderByCreatedAtDesc(incidentId);
         return new ResponseEntity<>(updateList(updates), HttpStatus.OK);
     }
 
-    private IncidentUpdateDTO getFieldsFromUpdate(IncidentUpdates incidentUpdates) {
-        IncidentUpdateDTO dto = new IncidentUpdateDTO();
+    private IncidentUpdateDto getFieldsFromUpdate(IncidentUpdate incidentUpdates) {
+        IncidentUpdateDto dto = new IncidentUpdateDto();
 
         dto.setShortDescription(incidentUpdates.getShortDescription());
         dto.setUpdateText(incidentUpdates.getUpdateText());
@@ -97,7 +96,7 @@ public class IncidentUpdatesController {
         }
         return dto;
     }
-    public Iterable<IncidentUpdateDTO> updateList(Iterable<IncidentUpdates> incidentUpdates) {
+    public Iterable<IncidentUpdateDto> updateList(Iterable<IncidentUpdate> incidentUpdates) {
 
         return StreamSupport.stream(incidentUpdates.spliterator(), false)
                 .map(this::getFieldsFromUpdate)
