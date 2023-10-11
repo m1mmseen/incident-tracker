@@ -71,7 +71,7 @@ export default {
     async fetchUsers() {
 
       try {
-        const response = await axios.get("/api/users", config);
+        const response = await axios.get("/api/user/all", config);
         this.users = response.data;
       } catch (e) {
         console.log("Error fetching Users: ", e);
@@ -80,7 +80,7 @@ export default {
     async sortById() {
       const sorting = "userId";
       try {
-        const response = await axios.post("/api/usersCustomSort", {sorting: sorting}, config);
+        const response = await axios.post("/api/user/customSort", {sorting: sorting}, config);
         this.users = response.data;
       } catch (e) {
         console.log("Error fetching Users with desired sorting method:  ", {sorting}, " - Error: ", e);
@@ -89,7 +89,7 @@ export default {
     async sortByUsername() {
       const sorting = "username";
       try {
-        const response = await axios.post("/api/usersCustomSort", {sorting: sorting}, config);
+        const response = await axios.post("/api/user/customSort", {sorting: sorting}, config);
         this.users = response.data;
       } catch (e) {
         console.log("Error fetching Users with desired sorting method: ", {sorting}, " - Error: ", e);
@@ -99,7 +99,7 @@ export default {
       const sorting = "firstname";
       try {
 
-        const response = await axios.post("/api/usersCustomSort", {sorting: sorting}, config);
+        const response = await axios.post("/api/user/customSort", {sorting: sorting}, config);
         this.users = response.data;
       } catch (e) {
         console.log("Error fetching Users with desired sorting method: ", {sorting}, " - Error: ", e);
@@ -109,7 +109,7 @@ export default {
       const sorting = "lastname";
       try {
 
-        const response = await axios.post("/api/usersCustomSort", {sorting: sorting}, config);
+        const response = await axios.post("/api/user/customSort", {sorting: sorting}, config);
         this.users = response.data;
       } catch (e) {
         console.log("Error fetching Users with desired sorting method: ", {sorting}, " - Error: ", e);
@@ -119,7 +119,7 @@ export default {
       const sorting = "role";
       try {
 
-        const response = await axios.post("/api/usersCustomSort", {sorting: sorting}, config);
+        const response = await axios.post("/api/user/customSort", {sorting: sorting}, config);
         this.users = response.data;
       } catch (e) {
         console.log("Error fetching Users with desired sorting method: ", {sorting}, " - Error: ", e);
@@ -130,7 +130,7 @@ export default {
       const sorting = "login";
       try {
 
-        const response = await axios.post("/api/usersCustomSort", {sorting: sorting}, config);
+        const response = await axios.post("/api/user/customSort", {sorting: sorting}, config);
         this.users = response.data;
         this.users = response.data;
       } catch (e) {
@@ -142,7 +142,7 @@ export default {
       const sorting = "incidents";
       try {
 
-        const response = await axios.post("/api/usersCustomSort", {sorting: "incidents"}, config);
+        const response = await axios.post("/api/user/customSort", {sorting: "incidents"}, config);
         this.users = response.data;
       } catch (e) {
         console.log("Error fetching Users with desired sorting method: ", {sorting}, " - Error: ", e);
@@ -153,7 +153,7 @@ export default {
       const sorting = "pwchanges";
       try {
 
-        const response = await axios.post("/api/usersCustomSort", {sorting: sorting}, config);
+        const response = await axios.post("/api/user/customSort",{sorting: sorting}, config);
         this.users = response.data;
       } catch (e) {
         console.log("Error fetching Users with desired sorting method: ", {sorting}, " - Error: ", e);

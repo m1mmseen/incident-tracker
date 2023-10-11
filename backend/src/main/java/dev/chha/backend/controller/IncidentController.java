@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @RestController
-@RequestMapping("/api/incident")
+@RequestMapping("/incident")
 public class IncidentController {
 
     private final IncidentRepository incidentRepo;

@@ -6,15 +6,15 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
   plugins: [vue()],
   server: {
-    port: 3000,
+    port: 80,
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'incident-tracker-backend-container:8080',
         ws: true,
         changeOrigin: true
       },
       '/auth': {
-        target: 'http://localhost:8080',
+        target: 'incident-tracker-backend-container:8080',
         ws: true,
         changeOrigin: true
       }
