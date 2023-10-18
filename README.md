@@ -43,36 +43,13 @@ Database: MySql
 
 ## Getting started
 
-### Start the Database in a docker container with a specified network
-1. Pull Image (if needed)
+After cloning this repo you can start the application with [docker compose](https://docs.docker.com/compose/gettingstarted/).
 
-    `docker pull mysql`
+In the root folder of the app run:
 
-2. Create a network for the application
-   
-    `docker network create incident-tracker-network`
+`docker-compose up --build`
 
-3. Run Database in created network
-
-    `docker run --name mysqldb --network incident-tracker-network -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=incident-tracker-db -d mysql`
-
-    _//change port (if needed) with portbinding 3307:3306 whereas 3307 is the host port, if 3306 is allready in use and 3306 is the internal port for the database in the container_
-
-### Build or Pull backend docker-image
-
-1. Build application <br>
-    Go to incident-tracker/backend folder <br>
-    Run: <br>
-    `docker build -t incident-tracker-backend .`
-   
-3. Pull application <br>
-    <img alt="Static Badge" src="https://img.shields.io/badge/Status-Coming Soon-orange">
-
-4. Run backend docker-image in a container <br>
-
-    `docker run --network incident-tracker-network --name incident-tracker-backend-container -p 8080:8080 incident-tracker-backend`
-
-    _//change port (if needed) with portbinding 8081:8080 whereas 8081 is the host port, if 8080 is allready in use and 8080 is the internal port for the database in the container_
+Docker starts a network and all three container which are needed (database, backend, frontend). Sometime it could be necessary to manually restart the backend or frontend container, even though the restart ist set to always. You can do this by using the docker-desktop app or by first run `docker-compose down` and then `docker-compose up --build` (closes all containers and then restarts them).
 
 ### Use API
 
