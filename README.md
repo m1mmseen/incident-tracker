@@ -51,25 +51,10 @@ In the root folder of the app run:
 
 Docker starts a network and all three container which are needed (database, backend, frontend). Sometime it could be necessary to manually restart the backend or frontend container, even though the restart ist set to always. You can do this by using the docker-desktop app or by first run `docker-compose down` and then `docker-compose up --build` (closes all containers and then restarts them).
 
-### Use API
+### Use API-Endpoint without frontend
 
-Open your browser or postman to make requests to the API (see [API-Endpoints](README.md#api-endpoints) )
-
-
-
-### Build frontend docker-image
-
-1. Build frontend <br>
-    Go to incident-tracker/frontend folder <br>
-    Run: <br>
-	`docker build -t incident-tracker-frontend .`
-
-2. Pull application <br>
-<img alt="Static Badge" src="https://img.shields.io/badge/Status-Coming Soon-orange">
-
-### Run Frontend 
-   `docker run -it --network incident-tracker-network -p 3000:3000 --rm --name incident-tracker-frontend-container incident-tracker-frontend`
-    
+Open your postman or a similar programm to make requests to the API (see [API-Endpoints](README.md#api-endpoints) )
+Please keep in mind to send authorization token for every request after login in.
 ## API-Endpoints
 
   Root | Endpoint | Methode | Secured (optional additional layer) | Purpose | Controller |
