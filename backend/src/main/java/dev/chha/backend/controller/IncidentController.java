@@ -1,14 +1,14 @@
 package dev.chha.backend.controller;
 
-import dev.chha.incidenttracker.dtos.IncidentDTO;
-import dev.chha.incidenttracker.entities.IncidentCategories;
-import dev.chha.incidenttracker.entities.IncidentSeverity;
-import dev.chha.incidenttracker.entities.User;
-import dev.chha.incidenttracker.repositories.IncidentCategoriesRepository;
-import dev.chha.incidenttracker.repositories.IncidentRepository;
-import dev.chha.incidenttracker.entities.Incident;
-import dev.chha.incidenttracker.repositories.IncidentSeverityRepository;
-import dev.chha.incidenttracker.repositories.UserRepository;
+import dev.chha.backend.dto.IncidentDto;
+import dev.chha.backend.model.IncidentCategory;
+import dev.chha.backend.model.IncidentSeverity;
+import dev.chha.backend.model.User;
+import dev.chha.backend.repository.IncidentCategoryRepository;
+import dev.chha.backend.repository.IncidentRepository;
+import dev.chha.backend.model.Incident;
+import dev.chha.backend.repository.IncidentSeverityRepository;
+import dev.chha.backend.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,25 +20,25 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/incident")
 public class IncidentController {
 
     private final IncidentRepository incidentRepo;
 
     private final UserRepository userRepo;
 
-    private final IncidentCategoriesRepository catRepo;
+    private final IncidentCategoryRepository catRepo;
 
     private final IncidentSeverityRepository sevRepo;
 
-    public IncidentController(IncidentRepository incidentRepo, UserRepository userRepo, IncidentCategoriesRepository catRepo, IncidentSeverityRepository sevRepo) {
+    public IncidentController(IncidentRepository incidentRepo, UserRepository userRepo, IncidentCategoryRepository catRepo, IncidentSeverityRepository sevRepo) {
         this.incidentRepo = incidentRepo;
         this.userRepo = userRepo;
         this.catRepo = catRepo;
         this.sevRepo = sevRepo;
     }
 
-    @GetMapping("/incident/{incidentId}")
+    @GetMapping("/{incidentId}")
     public ResponseEntity<?> hello(@PathVariable Long incidentId) {
 
         Optional<Incident> incidentOpt = incidentRepo.findById(incidentId);
@@ -50,13 +50,13 @@ public class IncidentController {
         Incident incident = incidentOpt.get();
         System.out.println(incident.toString());
 
-        IncidentDTO responseIncidentDTO = getFieldsFromIncident(incident);
+        IncidentDto responseIncidentDto = getFieldsFromIncident(incident);
 
 
-        return new ResponseEntity<>(responseIncidentDTO, HttpStatus.OK);
+        return new ResponseEntity<>(responseIncidentDto, HttpStatus.OK);
 
     }
-    @DeleteMapping("/incident/{incidentId}")
+    @DeleteMapping("/{incidentId}")
     public void delete(@PathVariable Long incidentId) {
 
         Optional<Incident> incident = incidentRepo.findById(incidentId);
@@ -66,8 +66,8 @@ public class IncidentController {
             incidentRepo.deleteById(incidentId);
         }
     }
-    @GetMapping("/incidents")
-    public ResponseEntity<Iterable<IncidentDTO>> getAll(){
+    @GetMapping("/all")
+    public ResponseEntity<Iterable<IncidentDto>> getAll(){
 
         Iterable<Incident> newIncident = incidentRepo.findAll();
 
@@ -78,7 +78,7 @@ public class IncidentController {
     @GetMapping("/categories")
     public ResponseEntity<?> getCategories(){
 
-        Iterable<IncidentCategories> categories = catRepo.findAll();
+        Iterable<IncidentCategory> categories = catRepo.findAll();
 
         return new ResponseEntity<>( categories, HttpStatus.OK);
     }
@@ -92,24 +92,24 @@ public class IncidentController {
 
     }
 
-    @PostMapping("/incidents/create")
+    @PostMapping("/report")
     @Transactional
-    public ResponseEntity<?> createIncident(@RequestBody IncidentDTO incidentDTO) {
+    public ResponseEntity<?> createIncident(@RequestBody IncidentDto incidentDto) {
 
 
-        Optional<User> user = userRepo.findById(incidentDTO.getUser_id());
+        Optional<User> user = userRepo.findById(incidentDto.getUser_id());
 
 
         if(user.isEmpty()) {
             return new ResponseEntity<>("User not found", HttpStatus.NOT_FOUND);
         }
 
-        Optional<IncidentCategories> cat = catRepo.findById(incidentDTO.getCategory());
+        Optional<IncidentCategory> cat = catRepo.findById(incidentDto.getCategory());
         if(cat.isEmpty()) {
             return new ResponseEntity<>("Wrong category", HttpStatus.NOT_FOUND);
         }
 
-        Optional<IncidentSeverity> sev = sevRepo.findById(incidentDTO.getSeverity());
+        Optional<IncidentSeverity> sev = sevRepo.findById(incidentDto.getSeverity());
         if(sev.isEmpty()) {
             return new ResponseEntity<>("Wrong severity", HttpStatus.NOT_FOUND);
         }
@@ -117,10 +117,10 @@ public class IncidentController {
         Incident newIncident = new Incident();
 
         newIncident.setUser(user.get());
-        newIncident.setTitel(incidentDTO.getTitel());
-        newIncident.setDescription(incidentDTO.getDescription());
-        newIncident.setReportdate(incidentDTO.getReportdate());
-        newIncident.setSolved(incidentDTO.isSolved());
+        newIncident.setTitel(incidentDto.getTitel());
+        newIncident.setDescription(incidentDto.getDescription());
+        newIncident.setReportdate(incidentDto.getReportdate());
+        newIncident.setSolved(incidentDto.isSolved());
         newIncident.setCategory(cat.get());
         newIncident.setSeverity(sev.get());
 
@@ -131,8 +131,8 @@ public class IncidentController {
 
     }
 
-    private IncidentDTO getFieldsFromIncident(Incident incident) {
-        IncidentDTO dto = new IncidentDTO();
+    private IncidentDto getFieldsFromIncident(Incident incident) {
+        IncidentDto dto = new IncidentDto();
 
         dto.setIncidentId(incident.getIncidentId());
         dto.setTitel(incident.getTitel());
@@ -153,7 +153,7 @@ public class IncidentController {
         return dto;
     }
 
-    public Iterable<IncidentDTO> incidentList(Iterable<Incident> incidents) {
+    public Iterable<IncidentDto> incidentList(Iterable<Incident> incidents) {
 
         return StreamSupport.stream(incidents.spliterator(), false)
                 .map(this::getFieldsFromIncident)

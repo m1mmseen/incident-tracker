@@ -27,6 +27,11 @@ public class IncidentCategory {
         this.incidents = incidents;
     }
 
+    public IncidentCategory(int categoryId, String categoryName) {
+        this.categoryId = categoryId;
+        this.categoryName = categoryName;
+    }
+
     public int getCategoryId() {
         return categoryId;
     }

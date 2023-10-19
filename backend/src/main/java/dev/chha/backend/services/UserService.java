@@ -1,6 +1,6 @@
 package dev.chha.backend.services;
 
-import dev.chha.incidenttracker.repositories.UserRepository;
+import dev.chha.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -10,14 +10,17 @@ public class RegisterDto {
 
     private String lastname;
 
+    private String userRole;
+
     public RegisterDto() {
     }
 
-    public RegisterDto(String username, String password, String firstname, String lastname) {
+    public RegisterDto(String username, String password, String firstname, String lastname, String userRole) {
         this.username = username;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
+        this.userRole = userRole;
     }
 
 
@@ -53,12 +56,21 @@ public class RegisterDto {
         this.lastname = lastname;
     }
 
+    public String getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
+    }
+
     @Override
     public String toString() {
-        return "Registration for:" +
-                "user='" + this.username + '\'' +
-                ", password='" + this.password + '\'' +
+        return "RegisterDto{" +
+                "username='" + username + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", userRole='" + userRole + '\'' +
                 '}';
     }
-    
 }
