@@ -31,9 +31,9 @@
             <button class="btn btn-close-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item bg-info clickable" @click="testMethod">Edit</a></li>
+              <li><a class="dropdown-item bg-info clickable" @click="editUser(user.userId)">Edit</a></li>
               <li><a class="dropdown-item bg-danger clickable" @click="deleteUser(user.userId)">Delete</a></li>
-              <li><a class="dropdown-item bg-warning clickable" @click="testMethod">Change Password</a></li>
+              <li><a class="dropdown-item bg-warning clickable" @click="changePassword(user.userId)">Change Password</a></li>
             </ul>
           </div>
         </td>
@@ -159,8 +159,11 @@ export default {
         console.log("Error fetching Users with desired sorting method: ", {sorting}, " - Error: ", e);
       }
     },
-    testMethod() {
-      alert("Geht");
+    changePassword(id) {
+      alert("Feature not yet implemented");
+    },
+    editUser(id) {
+      alert("Feature not yet implemented");
     },
     deleteUser(id) {
       if (confirm("Do you really want to delete User with id: " + id)) {

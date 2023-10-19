@@ -1,19 +1,25 @@
 package dev.chha.backend.controller;
 
+import dev.chha.backend.dto.RegisterDto;
 import dev.chha.backend.dto.SortRequestDto;
 import dev.chha.backend.dto.UserDto;
 import dev.chha.backend.model.User;
+import dev.chha.backend.model.UserRole;
 import dev.chha.backend.repository.UserRepository;
+import dev.chha.backend.repository.UserRoleRepository;
 import dev.chha.backend.services.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/user")
@@ -24,6 +30,12 @@ public class UserController {
 
     @Autowired
     private TokenService tokenService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserRoleRepository roleRepo;
 
     @GetMapping("/{userId}")
     public ResponseEntity<?> getUserDetails(@PathVariable Long userId,
@@ -62,6 +74,29 @@ public class UserController {
 
         return new ResponseEntity<>(users, HttpStatus.OK);
 
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<?> createUser(@RequestBody RegisterDto registerDto) {
+
+        Optional<User> existingUser = userRepo.findByUsername(registerDto.getUsername());
+        if(existingUser.isPresent()) {
+            return new ResponseEntity<>("This User already exists", HttpStatus.CONFLICT);
+        }
+
+        User newUser = new User();
+        Set<UserRole> roles = new HashSet<>();
+        // default should be 2 for User
+        roles.add(roleRepo.findById(Integer.parseInt(registerDto.getUserRole())).get());
+        newUser.setUsername(registerDto.getUsername());
+        newUser.setFirstname(registerDto.getFirstname());
+        newUser.setLastname(registerDto.getLastname());
+        newUser.setPassword(passwordEncoder.encode(registerDto.getPassword()));
+        newUser.setAuthorities(roles);
+
+        userRepo.save(newUser);
+
+        return new ResponseEntity<>("New User created", HttpStatus.CREATED);
     }
 
     @PostMapping("/customSort")

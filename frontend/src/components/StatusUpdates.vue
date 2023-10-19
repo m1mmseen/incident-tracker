@@ -1,25 +1,6 @@
 <template>
   <div class="container-sm border border-light-subtle rounded shadow d-flex flex-column p-4 mt-3  mb-5">
     <h3>Recent Updates</h3>
-<!--    <table class="table">
-      <thead class="">
-      <th scope="col">title</th>
-      <th scope="col">user</th>
-      <th scope="col"></th>
-      <th scope="col">created</th>
-      </thead>
-      <tbody>
-      <tr class="" v-for="update in fetchUpdates.updates"
-          :key="update.id">
-        <td>{{update.shortDescription}}</td>
-        <td>{{update.username}}</td>
-        <td>{{getDate(update.createdAt)}}</td>
-      </tr>
-
-
-      </tbody>
-    </table>-->
-
     <div class="accordion" id="updates">
       <div class="accordion-item" v-for="(update, index) in fetchUpdates.updates" :key="update.id">
         <h2 class="accordion-header">
@@ -31,6 +12,8 @@
               </div>
               <div class="col text-center">
                 <span class="badge bg-success-subtle text-dark me-3">{{ update.username }}</span>
+              </div>
+              <div class="col text-center">
                 <strong class="">{{getDate(update.createdAt)}}</strong>
               </div>
             </div>

@@ -9,21 +9,27 @@
           </div>
           <div class="input-group flex-nowrap mb-3">
             <span class="input-group-text" id="addon-wrapping">Username</span>
-            <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
+            <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" v-model="formdata.username">
           </div>
           <div class="input-group flex-nowrap mb-3">
             <span class="input-group-text" id="addon-wrapping">Firstname</span>
-            <input type="text" class="form-control" aria-label="Firstname" aria-describedby="addon-wrapping">
+            <input type="text" class="form-control" aria-label="Firstname" aria-describedby="addon-wrapping"
+                   v-model="formdata.firstname">
             <span class="input-group-text" id="addon-wrapping">Lastname</span>
-            <input type="text" class="form-control" aria-label="Lastname" aria-describedby="addon-wrapping">
-          </div>
-          <div class="input-group flex-nowrap mb-3">
+            <input type="text" class="form-control" aria-label="Lastname" aria-describedby="addon-wrapping" v-model="formdata.lastname">
+
             <span class="input-group-text" id="addon-wrapping">Password</span>
-            <input type="password" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
+            <input type="password" class="form-control" aria-label="password" aria-describedby="addon-wrapping" v-model="formdata.password">
           </div>
           <div class="input-group flex-nowrap mb-3">
             <span class="input-group-text" id="addon-wrapping">Confirm Password</span>
-            <input type="password" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
+            <input type="password" class="form-control" aria-label="confirmPassword" aria-describedby="addon-wrapping" v-model="confirmPassword">
+          </div>
+          <div class="input-group flex-nowrap mb-3">
+            <select class="form-select me-3" id="userRole" v-model="formdata.userRole" @change="setUserRole($event)">
+              <option value="2" selected>User</option>
+              <option value="1">Admin</option>
+            </select>
           </div>
           <button class="btn btn-outline-success" type="submit">Sign in</button>
         </form>
@@ -34,45 +40,62 @@
 
 </template>
 
-<script setup>
+<script>
+
+import {useAuth} from "../stores/auth.js";
 import axios from "axios";
-import {ref, onMounted, computed} from "vue";
-import {useRoute} from "vue-router";
-import router from "../router/routes.js";
-import StatusUpdates from "./StatusUpdates.vue";
-import StatusNewUpdate from "./StatusNewUpdate.vue";
 
-const route = useRoute();
-const UserId = route.params.UserId;
-const User = ref({});
+const userdata = useAuth();
+const userId = userdata.userId;
+const token = userdata.token;
 
-onMounted(() => {
-  fetchIncidentData();
-});
-
-const fetchIncidentData = () => {
-  axios
-      .get(`/api/user/1`) // Replace with userId
-      .then((response) => {
-        console.log(User)
-        User.value = response.data;
-      })
-      .catch((error) => {
-        console.error("Error fetching details:", error);
-      });
+const config = {
+  headers: {
+    Authorization: `Bearer ${token}`
+  },
 };
 
+export default {
+  name: "UserForm",
+  data() {
+    return {
+      formdata: {
+        username: '',
+        firstname: '',
+        lastname: '',
+        password: '',
+        userRole: ''
+      },
+      confirmPassword: ''
+    }
+  },
+  methods: {
+    setUserRole(event) {
+      this.userRole = event.target.value;
+    },
+    async submitForm(){
+      axios
+          .post("/api/user/create", this.formdata, config)
+          .then((response) => {
+            const status = response.status;
+            if(status === 409) {
+              alert("Username already exists, please choose another one!");
+              this.formdata.username = '';
+            } else if (status === 201) {
+              alert("User created successfully");
+              Object.keys(this.formdata).forEach((key) => {
+                this.formdata[key] = '';
+              });
+              this.confirmPassword = '';
+            }
+          })
+          .catch(error => {
+            console.log("An error occurred creating a new user", error);
+          });
+    }
 
-const editUser = () => {
-  alert("Edit User Method");
-};
-const changePassword = () => {
-  alert("Change Password Method");
-};
-
-const deleteUser = () => {
-  alert("Delete User Method");
-};
+  }
+}
 
 
 </script>

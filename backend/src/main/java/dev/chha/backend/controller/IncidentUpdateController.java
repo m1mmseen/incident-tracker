@@ -18,7 +18,7 @@ import java.util.stream.StreamSupport;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/updates")
 public class IncidentUpdateController {
 
 
@@ -64,7 +64,7 @@ public class IncidentUpdateController {
         return new ResponseEntity<>(updateList(updates), HttpStatus.CREATED);
 
     }
-    @GetMapping("/allUpdates")
+    @GetMapping("/all")
     public ResponseEntity<Iterable<IncidentUpdateDto>> getAllUpdatesBy() {
 
         Iterable<IncidentUpdate> updates = updateRepo.findAll();
@@ -73,7 +73,7 @@ public class IncidentUpdateController {
 
 
     }
-    @GetMapping("/updates/{incidentId}")
+    @GetMapping("/{incidentId}")
     public ResponseEntity<?> getAllUpdatesByIncident(@PathVariable Long incidentId) {
         List<IncidentUpdate> updates = updateRepo.findAllByIncident_IdOrderByCreatedAtDesc(incidentId);
         return new ResponseEntity<>(updateList(updates), HttpStatus.OK);

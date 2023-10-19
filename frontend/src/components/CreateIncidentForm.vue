@@ -1,6 +1,6 @@
 <template>
   <div class="container-sm shadow mt-3 p-4 border-top border-5 border-warning">
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent>
       <div class="mb-3">
         <label for="createIncidentFormTitel" class="form-label">Titel</label>
         <input type="text" class="form-control" id="createIncidentFormTitel" placeholder="Some suspicious event..."
@@ -38,7 +38,7 @@
           </div>
       </div>
 
-      <button class="btn btn-warning pe-lg-4 ps-lg-4" type="submit" @click="submitForm">Report</button>
+      <button class="btn btn-warning pe-lg-4 ps-lg-4" type="button" @click="submitForm">Report</button>
     </form>
   </div>
 
@@ -85,15 +85,14 @@ export default {
   methods: {
     setCategory(event) {
       this.category = event.target.value;
-      console.log("severity:" + this.severity + " _ category:" + this.category);
     },
     setSeverity(event) {
       this.severity = event.target.value;
-      console.log("severity:" + this.severity + " _ category:" + this.category);
     },
     async getCategories() {
       try {
-        await axios.get('/api/incident/categories', config)
+        await axios
+            .get('/api/incident/categories', config)
             .then((response) => {
               if (response.status === 200) {
                 this.categories = response.data;
@@ -117,16 +116,14 @@ export default {
     },
 
     async submitForm() {
-      console.log(this.formdata);
       await axios.post('/api/incident/report', this.formdata, config)
           .then((response) => {
             const status = response.status;
             if (status === 201) {
               alert("success");
-              this.formdata.titel = '';
-              this.formdata.description = '';
-              this.formdata.severity = '';
-              this.formdata.category = ''
+              Object.keys(this.formdata).forEach((key) => {
+                this.formdata[key] = '';
+              })
             }
           })
             .catch(error => {

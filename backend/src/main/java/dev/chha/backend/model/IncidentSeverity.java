@@ -26,6 +26,7 @@ public class IncidentSeverity {
         this.severityName = severityName;
     }
 
+
     public int getSeverityId() {
         return severityId;
     }
