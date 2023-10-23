@@ -6,8 +6,8 @@
          :key="incident.incidentId"
          @click="goToDetails(incident.incidentId)">
       <div class="card-header row justify-content-between bg-light-subtle">
-        <b class="col text-start">{{ incident.titel }}</b>
-        <b class="col text-center ">assigned to: <span class="text-uppercase text-dark-emphasis">{{ incident.username }}</span></b>
+        <b class="col text-start">{{ incident.title }}</b>
+        <b class="col text-center ">assigned to: <span class="text-uppercase text-dark-emphasis">{{ incident.assignedUser }}</span></b>
         <span class="col text-end" v-bind="$attrs"><b>
           <p v-if="incident.isSolved">
           Status: <b>solved</b>

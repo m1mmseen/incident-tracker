@@ -40,6 +40,7 @@ export default {
 .nav-item:hover {
   transform: scale(1.1);
   text-decoration: underline #42b983;
+  padding-left: .5rem;
 }
 
 </style>

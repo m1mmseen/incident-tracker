@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7932919b-3a95-40a8-b018-4c9176dd05eb" name="Changes" comment="Register User Feature implemented, API Calls edited, General Refactoring, deletion of unused classes and files" />
+    <list default="true" id="7932919b-3a95-40a8-b018-4c9176dd05eb" name="Changes" comment="Register User Feature implemented, API Calls edited, General Refactoring, deletion of unused classes and files">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/security/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/docker-image.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/maven.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/model/Incident.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/model/Incident.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/IncidentCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/IncidentCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/IncidentRow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/IncidentRow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/IncidentTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/IncidentTable.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavigationBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavigationBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/views/Dashboard_View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Dashboard_View.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Dockerfile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -126,6 +144,9 @@
       <workItem from="1697554203889" duration="3708000" />
       <workItem from="1697636695426" duration="6705000" />
       <workItem from="1697722447999" duration="512000" />
+      <workItem from="1697779349063" duration="3276000" />
+      <workItem from="1698048267344" duration="3769000" />
+      <workItem from="1698053018407" duration="5763000" />
     </task>
     <task id="LOCAL-00001" summary="Created Dockerfiles">
       <created>1696599266054</created>

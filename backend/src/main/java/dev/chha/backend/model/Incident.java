@@ -1,6 +1,7 @@
 package dev.chha.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.chha.backend.repository.IncidentSeverityRepository;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -46,13 +47,15 @@ public class Incident {
     public Incident() {
     }
 
-    public Incident(Long incidentId, String titel, String description, String reportdate, boolean isSolved, User user) {
+    public Incident(Long incidentId, String titel, String description, String reportdate, User user, IncidentCategory category, IncidentSeverity severity) {
         this.incidentId = incidentId;
-        Titel = titel;
-        Description = description;
+        this.Titel = titel;
+        this.Description = description;
         this.reportdate = reportdate;
-        this.isSolved = isSolved;
+        this.isSolved = false;
         this.user = user;
+        this.category = category;
+        this.severity = severity;
     }
 
     public Long getId() {

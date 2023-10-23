@@ -9,12 +9,12 @@ export default defineConfig({
     port: 80,
     proxy: {
       '/api': {
-        target: 'incident-tracker-backend-container:8080',
+        target: 'http://localhost:8080',
         ws: true,
         changeOrigin: true
       },
       '/auth': {
-        target: 'incident-tracker-backend-container:8080',
+        target: 'http://localhost:8080',
         ws: true,
         changeOrigin: true
       }

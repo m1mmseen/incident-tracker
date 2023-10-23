@@ -24,6 +24,7 @@ services:
     depends_on:
       - mysqldb
     container_name: backend
+    restart: always
 
   frontend:
     build:

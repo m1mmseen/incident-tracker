@@ -13,16 +13,22 @@ public class IncidentResponseDto {
 
     private String assignedUser;
 
+    private String categoryName;
+
+    private String severityName;
+
     public IncidentResponseDto() {
     }
 
-    public IncidentResponseDto(Long incidentId, String title, String description, String reportdate, boolean solved, String assignedUser) {
+    public IncidentResponseDto(Long incidentId, String title, String description, String reportdate, boolean solved, String assignedUser, String categoryName, String severityName) {
         this.incidentId = incidentId;
         this.title = title;
         this.description = description;
         this.reportdate = reportdate;
         this.solved = solved;
         this.assignedUser = assignedUser;
+        this.categoryName = categoryName;
+        this.severityName = severityName;
     }
 
     public Long getIncidentId() {
@@ -65,11 +71,41 @@ public class IncidentResponseDto {
         this.solved = solved;
     }
 
-    public String getAssignedUser(String username) {
+    public String getAssignedUser() {
         return assignedUser;
     }
 
     public void setAssignedUser(String assignedUser) {
         this.assignedUser = assignedUser;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public String getSeverityName() {
+        return severityName;
+    }
+
+    public void setSeverityName(String severityName) {
+        this.severityName = severityName;
+    }
+
+    @Override
+    public String toString() {
+        return "IncidentResponseDto{" +
+                "incidentId=" + incidentId +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", reportdate='" + reportdate + '\'' +
+                ", solved=" + solved +
+                ", assignedUser='" + assignedUser + '\'' +
+                ", categoryName='" + categoryName + '\'' +
+                ", severityName='" + severityName + '\'' +
+                '}';
     }
 }

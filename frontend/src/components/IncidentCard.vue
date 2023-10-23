@@ -4,7 +4,7 @@
     <div class="row">
       <h3 class="col">
         <span class="badge bg-info-subtle text-dark">{{ incident.id }}</span>
-        {{ incident.titel }}
+        {{ incident.title }}
 
       </h3>
       <div class="col text-end" >
@@ -25,7 +25,7 @@
       <div class="col">
         <p>Description: {{ incident.description }}</p>
         <p>Reportdate: {{ incident.reportdate }}</p>
-        <p>Reporter: {{incident.username}}</p>
+        <p>Reporter: {{incident.assignedUser}}</p>
         <p v-if="incident.isSolved">
           Status: <b>solved</b>
         </p>
@@ -33,7 +33,7 @@
         <p v-else>
           Status: <b>open</b>
         </p>
-        <p>Category: {{incident.categoryId}}</p>
+        <p>Category: {{incident.categoryName}}</p>
         <p >Severity: {{incident.severityName}}</p>
       </div>
       <div class="col">

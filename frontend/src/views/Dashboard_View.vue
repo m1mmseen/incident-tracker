@@ -30,9 +30,9 @@ onMounted(async () => {
     method: "GET",
     url: `/api/user/${userId}`
   }).then(response => {
-    console.log(response.data);
+    data.value = response.data;
   });
-  data.value = response.data;
+
 })
 
 

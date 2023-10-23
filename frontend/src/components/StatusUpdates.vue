@@ -94,7 +94,7 @@ export default {
 
       if (days === 1) {
         return days + " day ago";
-      } else if (days > 0) {
+      } else if (days > 1) {
         return days + " days ago";
       } else if (hours === 1) {
         return hours + " hour ago";

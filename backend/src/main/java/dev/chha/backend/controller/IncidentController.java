@@ -1,6 +1,7 @@
 package dev.chha.backend.controller;
 
 import dev.chha.backend.dto.IncidentDto;
+import dev.chha.backend.dto.IncidentResponseDto;
 import dev.chha.backend.model.IncidentCategory;
 import dev.chha.backend.model.IncidentSeverity;
 import dev.chha.backend.model.User;
@@ -10,11 +11,14 @@ import dev.chha.backend.model.Incident;
 import dev.chha.backend.repository.IncidentSeverityRepository;
 import dev.chha.backend.repository.UserRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.swing.text.html.Option;
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -39,18 +43,16 @@ public class IncidentController {
     }
 
     @GetMapping("/{incidentId}")
-    public ResponseEntity<?> hello(@PathVariable Long incidentId) {
+    public ResponseEntity<?> getIncident(@PathVariable Long incidentId) {
 
         Optional<Incident> incidentOpt = incidentRepo.findById(incidentId);
 
         if(incidentOpt.isEmpty()) {
             return new ResponseEntity<>("No Incident found", HttpStatus.NOT_FOUND);
         }
-        System.out.println(incidentOpt.get().toString());
         Incident incident = incidentOpt.get();
-        System.out.println(incident.toString());
 
-        IncidentDto responseIncidentDto = getFieldsFromIncident(incident);
+        IncidentResponseDto responseIncidentDto = getFieldsFromIncident(incident);
 
 
         return new ResponseEntity<>(responseIncidentDto, HttpStatus.OK);
@@ -67,7 +69,7 @@ public class IncidentController {
         }
     }
     @GetMapping("/all")
-    public ResponseEntity<Iterable<IncidentDto>> getAll(){
+    public ResponseEntity<Iterable<IncidentResponseDto>> getAll(){
 
         Iterable<Incident> newIncident = incidentRepo.findAll();
 
@@ -131,29 +133,24 @@ public class IncidentController {
 
     }
 
-    private IncidentDto getFieldsFromIncident(Incident incident) {
-        IncidentDto dto = new IncidentDto();
+    private IncidentResponseDto getFieldsFromIncident(Incident incident) {
+        IncidentResponseDto dto = new IncidentResponseDto();
+
+        Optional<User> userOpt = userRepo.findById(incident.getUser().getUserId());
 
         dto.setIncidentId(incident.getIncidentId());
-        dto.setTitel(incident.getTitel());
+        dto.setTitle(incident.getTitel());
         dto.setDescription(incident.getDescription());
         dto.setReportdate(incident.getReportdate());
-
-        if(incident.getUser() != null){
-            dto.setUser_id(incident.getUser().getUserId());
-            dto.setUsername(incident.getUser().getUsername());
-        }
-        if(incident.getCategory() != null) {
-            dto.setCategoryName(incident.getCategory().getCategoryName());
-        }
-        if(incident.getSeverity() != null) {
-            dto.setSeverityName(incident.getSeverity().getSeverityName());
-        }
+        dto.setCategoryName(incident.getCategory().getCategoryName());
+        dto.setSeverityName(incident.getSeverity().getSeverityName());
+        dto.setSolved(incident.isSolved());
+        dto.setAssignedUser(userOpt.get().getUsername());
 
         return dto;
     }
 
-    public Iterable<IncidentDto> incidentList(Iterable<Incident> incidents) {
+    public List<IncidentResponseDto> incidentList(Iterable<Incident> incidents) {
 
         return StreamSupport.stream(incidents.spliterator(), false)
                 .map(this::getFieldsFromIncident)

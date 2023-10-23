@@ -9,7 +9,7 @@
         <tbody>
         <tr v-for="incident in incidents" v-bind:key="incident.id" @click="goToDetails(incident.incidentId)">
           <td> {{incident.incidentId }}</td>
-          <td> {{incident.titel }}</td>
+          <td> {{incident.title }}</td>
         </tr>
         </tbody>
       </table>
