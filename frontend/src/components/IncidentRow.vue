@@ -30,7 +30,17 @@
       'bg-warning': incident.severity === 3,
       'bg-warning-subtle': incident.severity === 4
       }">
-      <b class="mb-0 text-uppercase">{{ incident.categoryName }}</b>
+      <div class="row">
+        <div class="col">
+          <b class="mb-0 text-uppercase">{{ incident.categoryName }}</b>
+        </div>
+        <div class="col text-end">
+              <span v-bind="$attrs">
+          <p v-if="incident.solved"> Status: <b class="badge bg-white text-dark-emphasis">solved</b></p>
+          <p v-else> Status: <b class="badge bg-white text-dark-emphasis">open</b></p>
+        </span>
+        </div>
+      </div>
     </div>
     <div class="card-body">
       <h5 class="card-title">{{incident.titel}}</h5>
@@ -42,8 +52,8 @@
         <div class="col text-center">{{ incident.assignedUser }}</div>
         <div class="col text-end">
           <div class="btn-group m-0" role="group">
-            <button type="button" class="btn btn-outline-success" @click="solved()">Mark as solved</button>
-            <button type="button" class="btn btn-outline-danger" @click="deleteIncident(incident.incidentId)">Delete</button>
+            <button type="button" class="btn btn-outline-success" @click.stop="solved(incident.incidentId)">Mark as solved</button>
+            <button type="button" class="btn btn-outline-danger" @click.stop="deleteIncident(incident.incidentId)">Delete</button>
           </div>
         </div>
       </div>
@@ -58,6 +68,11 @@ import {useAuth} from "../stores/auth.js";
 import {duration} from "../stores/durationStore.js";
 
 const userdata = useAuth();
+const config = {
+  headers: {
+    Authorization: `Bearer ${this.token}`
+  }
+}
 
 export default {
   name: 'IncidentTable',
@@ -102,21 +117,24 @@ export default {
       });
     },
     async deleteIncident(incidentId) {
-      const config = {
-        headers: {
-          Authorization: `Bearer ${this.token}`
-        }
-      }
+
       try {
-        await axios.delete(`/api/incident/${incidentId}`, config);
+        await axios.delete(`/api/incident/${incidentId}`, this.config);
         await this.fetchIncidents();
         await alert("deleted");
       } catch (error) {
         console.error('Error occurred deleting incidents:', error)
       }
     },
-    solved() {
-      alert("Feature is planned");
+    solved(incidentId) {
+      console.log(incidentId)
+      try{
+        axios.patch(`/api/incident/${incidentId}`, this.config)
+      }
+      catch (error) {
+        console.log("Error patching data: ", error);
+      }
+
     },
     sort() {
       alert("Feature is planned");

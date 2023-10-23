@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7932919b-3a95-40a8-b018-4c9176dd05eb" name="Changes" comment="Solved Issue #17">
-      <change afterPath="$PROJECT_DIR$/frontend/src/stores/durationStore.js" afterDir="false" />
+    <list default="true" id="7932919b-3a95-40a8-b018-4c9176dd05eb" name="Changes" comment="Solved Issue #18 and refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/IncidentCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/IncidentCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/security/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/nginx.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/IncidentRow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/IncidentRow.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,32 +49,32 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/chris/IdeaProjects/incident-tracker/backend/src/main/java/dev/chha/backend/controller&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;C:/Users/chris/AppData/Roaming/JetBrains/IntelliJIdea2023.1/node/node-v18.15.0-win-x64/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.1.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "20",
+    "last_opened_file_path": "C:/Users/chris/IdeaProjects/incident-tracker",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "C:/Users/chris/AppData/Roaming/JetBrains/IntelliJIdea2023.1/node/node-v18.15.0-win-x64/node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.1.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\chris\IdeaProjects\incident-tracker\backend\src\main\java\dev\chha\backend\controller" />
@@ -140,7 +135,8 @@
       <workItem from="1697722447999" duration="512000" />
       <workItem from="1697779349063" duration="3276000" />
       <workItem from="1698048267344" duration="3769000" />
-      <workItem from="1698053018407" duration="14336000" />
+      <workItem from="1698053018407" duration="14459000" />
+      <workItem from="1698073453015" duration="5314000" />
     </task>
     <task id="LOCAL-00001" summary="Created Dockerfiles">
       <created>1696599266054</created>
@@ -205,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698059152645</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Solved Issue #18 and refactoring">
+      <created>1698069013243</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1698069013243</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +250,7 @@
     <MESSAGE value="Docker-Compose is set up, further bug-fixing is needed." />
     <MESSAGE value="Register User Feature implemented, API Calls edited, General Refactoring, deletion of unused classes and files" />
     <MESSAGE value="Solved Issue #17" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solved Issue #17" />
+    <MESSAGE value="Solved Issue #18 and refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved Issue #18 and refactoring" />
   </component>
 </project>

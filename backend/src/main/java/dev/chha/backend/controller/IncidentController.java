@@ -58,6 +58,8 @@ public class IncidentController {
         return new ResponseEntity<>(responseIncidentDto, HttpStatus.OK);
 
     }
+
+    @CrossOrigin(origins = "http://localhost:80")
     @DeleteMapping("/{incidentId}")
     public void delete(@PathVariable Long incidentId) {
 
@@ -130,6 +132,22 @@ public class IncidentController {
         incidentRepo.save(newIncident);
 
         return new ResponseEntity<>(newIncident, HttpStatus.CREATED);
+
+    }
+
+    @CrossOrigin(origins = "http://frontend:80/api")
+    @PatchMapping("/{incidentId}")
+    public ResponseEntity<?> setSolved(@PathVariable Long incidentId){
+
+        Optional<Incident> incidentOpt = incidentRepo.findById(incidentId);
+
+        if (incidentOpt.isPresent()) {
+            Incident incident = incidentOpt.get();
+            incident.setSolved(true);
+            return new ResponseEntity<>(incidentRepo.save(incident), HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>("Incident not found", HttpStatus.NOT_FOUND);
 
     }
 
