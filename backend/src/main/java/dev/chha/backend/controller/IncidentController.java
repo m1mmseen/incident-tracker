@@ -144,6 +144,7 @@ public class IncidentController {
         dto.setReportdate(incident.getReportdate());
         dto.setCategoryName(incident.getCategory().getCategoryName());
         dto.setSeverityName(incident.getSeverity().getSeverityName());
+        dto.setSeverity(incident.getSeverity().getSeverityId());
         dto.setSolved(incident.isSolved());
         dto.setAssignedUser(userOpt.get().getUsername());
 

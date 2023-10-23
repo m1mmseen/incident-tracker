@@ -17,11 +17,12 @@ public class IncidentResponseDto {
 
     private String severityName;
 
+    private int severity;
+
     public IncidentResponseDto() {
     }
 
-    public IncidentResponseDto(Long incidentId, String title, String description, String reportdate, boolean solved, String assignedUser, String categoryName, String severityName) {
-        this.incidentId = incidentId;
+    public IncidentResponseDto(String title, String description, String reportdate, boolean solved, String assignedUser, String categoryName, String severityName, int severity) {
         this.title = title;
         this.description = description;
         this.reportdate = reportdate;
@@ -29,6 +30,7 @@ public class IncidentResponseDto {
         this.assignedUser = assignedUser;
         this.categoryName = categoryName;
         this.severityName = severityName;
+        this.severity = severity;
     }
 
     public Long getIncidentId() {
@@ -95,6 +97,14 @@ public class IncidentResponseDto {
         this.severityName = severityName;
     }
 
+    public int getSeverity() {
+        return severity;
+    }
+
+    public void setSeverity(int severity) {
+        this.severity = severity;
+    }
+
     @Override
     public String toString() {
         return "IncidentResponseDto{" +
@@ -106,6 +116,7 @@ public class IncidentResponseDto {
                 ", assignedUser='" + assignedUser + '\'' +
                 ", categoryName='" + categoryName + '\'' +
                 ", severityName='" + severityName + '\'' +
+                ", severity=" + severity +
                 '}';
     }
 }

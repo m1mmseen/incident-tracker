@@ -18,7 +18,7 @@
             <a class="dropdown-item" href="#" id="delete" @click.stop="deleteIncident" >Delete</a>
           </ul>
         </div>
-        <button class="btn btn-success me-2">Solved</button>
+        <button class="btn btn-success me-2">Mark as solved</button>
       </div>
     </div>
     <div class="row g-2">

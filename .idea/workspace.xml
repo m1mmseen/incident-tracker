@@ -4,24 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7932919b-3a95-40a8-b018-4c9176dd05eb" name="Changes" comment="Register User Feature implemented, API Calls edited, General Refactoring, deletion of unused classes and files">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/security/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/docker-image.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/maven.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
+    <list default="true" id="7932919b-3a95-40a8-b018-4c9176dd05eb" name="Changes" comment="Solved Issue #17">
+      <change afterPath="$PROJECT_DIR$/frontend/src/stores/durationStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/controller/IncidentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/dto/IncidentResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/model/Incident.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/model/Incident.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/dev/chha/backend/security/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/IncidentCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/IncidentCard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/IncidentRow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/IncidentRow.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/IncidentTable.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/IncidentTable.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavigationBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavigationBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Dashboard_View.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Dashboard_View.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +29,7 @@
       <list>
         <option value="Dockerfile" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -146,7 +140,7 @@
       <workItem from="1697722447999" duration="512000" />
       <workItem from="1697779349063" duration="3276000" />
       <workItem from="1698048267344" duration="3769000" />
-      <workItem from="1698053018407" duration="5763000" />
+      <workItem from="1698053018407" duration="14336000" />
     </task>
     <task id="LOCAL-00001" summary="Created Dockerfiles">
       <created>1696599266054</created>
@@ -204,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697722584508</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Solved Issue #17">
+      <created>1698059152645</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698059152645</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +246,7 @@
     <MESSAGE value="Refactorized backend, edited endpoint in frontend" />
     <MESSAGE value="Docker-Compose is set up, further bug-fixing is needed." />
     <MESSAGE value="Register User Feature implemented, API Calls edited, General Refactoring, deletion of unused classes and files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Register User Feature implemented, API Calls edited, General Refactoring, deletion of unused classes and files" />
+    <MESSAGE value="Solved Issue #17" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved Issue #17" />
   </component>
 </project>

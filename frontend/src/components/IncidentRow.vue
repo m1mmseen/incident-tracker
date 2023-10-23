@@ -1,38 +1,61 @@
 <template>
-    <p>Incidents: {{incidents.length}}</p>
-
-    <div class="card container text-start mt-2 m-3  border-1 border-dark"
-         v-for="incident in incidents"
-         :key="incident.incidentId"
-         @click="goToDetails(incident.incidentId)">
-      <div class="card-header row justify-content-between bg-light-subtle">
-        <b class="col text-start">{{ incident.title }}</b>
-        <b class="col text-center ">assigned to: <span class="text-uppercase text-dark-emphasis">{{ incident.assignedUser }}</span></b>
-        <span class="col text-end" v-bind="$attrs"><b>
-          <p v-if="incident.isSolved">
-          Status: <b>solved</b>
-          </p>
-          <p v-else>
-          Status: <b class="badge bg-danger-subtle text-dark-emphasis">open</b>
-          </p></b>
-        </span>
-
+  <div class="container p-0">
+    <div class="row mt-4 mb-4">
+      <div class="col">
+        <h4>Actual open incidents: {{incidents.length}}</h4>
       </div>
-      <div class="card-body pt-1">
-        <p class="card-text m-0 p-0">{{ incident.description }}</p>
-        <p>Test</p>
-        <div class="btn-group float-end">
-          <button class="btn btn-outline-success" v-on:click.stop="solved">Solved</button>
-          <button class="btn btn-outline-danger" v-on:click.stop="deleteIncident(incident.incidentId)" v-if="isAdmin">Delete</button>
+      <div class="col text-end">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort by
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" @click="sort">Category</a></li>
+            <li><a class="dropdown-item" @click="sort">Severity</a></li>
+            <li><a class="dropdown-item" @click="sort">User</a></li>
+            <li><a class="dropdown-item" @click="sort">Report Date</a></li>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="card mb-3 border border-1 border-dark-subtle"
+       v-for="incident in incidents"
+       :key="incidentId"
+       @click="goToDetails(incident.incidentId)">
+    <div class="card-header" :class="{
+      'bg-danger':incident.severity === 1,
+      'bg-danger-subtle': incident.severity === 2,
+      'bg-warning': incident.severity === 3,
+      'bg-warning-subtle': incident.severity === 4
+      }">
+      <b class="mb-0 text-uppercase">{{ incident.categoryName }}</b>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{incident.titel}}</h5>
+      <p class="card-text">{{incident.description}}</p>
+    </div>
+    <div class="card-footer text-body-secondary">
+      <div class="row">
+        <div class="col">created at: {{incident.reportdate}}</div>
+        <div class="col text-center">{{ incident.assignedUser }}</div>
+        <div class="col text-end">
+          <div class="btn-group m-0" role="group">
+            <button type="button" class="btn btn-outline-success" @click="solved()">Mark as solved</button>
+            <button type="button" class="btn btn-outline-danger" @click="deleteIncident(incident.incidentId)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
 import router from "../router/routes.js";
 import {useAuth} from "../stores/auth.js";
+import {duration} from "../stores/durationStore.js";
 
 const userdata = useAuth();
 
@@ -42,6 +65,7 @@ export default {
     return {
       token: userdata.token,
       incidents: [],
+      duration
     };
   },
   created() {
@@ -63,6 +87,7 @@ export default {
       try {
         const response = await axios.get('api/incident/all', config);
         this.incidents = response.data;
+        console.log(response.data);
         } catch (error) {
         console.error('Error occurred fetching incidents:', error)
       }
@@ -91,8 +116,11 @@ export default {
       }
     },
     solved() {
-      alert("Edited");
-  },
+      alert("Feature is planned");
+    },
+    sort() {
+      alert("Feature is planned");
+    }
 
 
 
